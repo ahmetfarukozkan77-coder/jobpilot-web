@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobPilot</title>
+  <meta name="description" content="JobPilot fills job applications for you: your profile, resumes and saved answers in one place.">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <main class="hero">
+    <h1>JobPilot</h1>
+    <p>Your profile, resumes and saved answers in one place. The JobPilot Chrome extension uses them to score your resume, tailor it, and fill job applications for you — you always press Submit yourself.</p>
+    <button id="btn-signin" class="btn primary">Sign in with Google</button>
+    <p id="signin-error" class="sub hidden"></p>
+
+    <section class="features">
+      <div><strong>Profile</strong><br>Contact details, preferences and short answers the extension fills in.</div>
+      <div><strong>Resumes</strong><br>Upload several versions and choose the default one.</div>
+      <div><strong>Saved answers</strong><br>Answers you gave once are reused on similar questions.</div>
+      <div><strong>History &amp; credits</strong><br>Every application you sent, and your credit balance.</div>
+    </section>
+  </main>
+  <footer class="site"><a href="privacy.html">Privacy policy</a></footer>
+
+  <script src="js/vendor/supabase.js"></script>
+  <script type="module">
+    import { currentUser, signIn, appUrl } from './js/db.js';
+    if (await currentUser()) location.replace(appUrl());
+    document.getElementById('btn-signin').addEventListener('click', async () => {
+      const { error } = await signIn();
+      if (error) {
+        const p = document.getElementById('signin-error');
+        p.textContent = `Could not start sign-in: ${error.message}`;
+        p.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

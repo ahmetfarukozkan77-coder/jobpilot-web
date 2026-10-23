@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobPilot — Privacy policy</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<main class="doc">
+  <p><a href="index.html">← JobPilot</a></p>
+  <h1>Privacy policy</h1>
+  <p class="sub">Last updated: 23 October 2026 · Applies to the JobPilot Chrome extension and this website.</p>
+
+  <h2>Summary</h2>
+  <p>JobPilot keeps your profile, resumes, saved answers and application history in your account on our backend (Supabase), so you can manage them on this website and use them in the extension. AI features run on our backend, which sends the data each feature needs to Anthropic's Claude models. JobPilot never submits an application for you, and it reads page content only on the tab where you use it.</p>
+
+  <h2>What we store in your account</h2>
+  <table>
+    <thead><tr><th>Data</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Google account email and user ID</td><td>Sign-in, billing, support</td></tr>
+      <tr><td>Profile: contact details, work preferences, education, short answers, references, voluntary disclosures you choose to enter</td><td>Filling application forms</td></tr>
+      <tr><td>Resume files and their plain text</td><td>Uploading your resume to forms; ATS scoring, tailoring and answers</td></tr>
+      <tr><td>Saved answers (questions you answered in the extension and chose to remember)</td><td>Answering similar questions later without asking</td></tr>
+      <tr><td>Job descriptions the extension read (per page address)</td><td>Not paying twice to read the same posting</td></tr>
+      <tr><td>Application records: company, role, page address, status, ATS scores, tailored resume</td><td>Your application history</td></tr>
+      <tr><td>Credit balance, subscription status, Stripe customer ID</td><td>Billing</td></tr>
+      <tr><td>Usage logs: feature used, model, token counts, credits charged, time</td><td>Billing, rate limiting, support</td></tr>
+      <tr><td>Fill statistics — <strong>only if you turn them on</strong> in Settings: site, field types, which step filled a field, whether it worked. Never field values or your answers.</td><td>Improving form filling</td></tr>
+    </tbody>
+  </table>
+  <p>Every table is protected by row-level security: a signed-in user can read and change only their own rows. The extension also keeps a copy of your profile, resumes and history in Chrome's local storage so it works quickly and offline.</p>
+
+  <h2>What is sent to the AI model</h2>
+  <p>When you use a feature, the extension sends page data to our backend, which builds the request on the server and sends it to Anthropic:</p>
+  <ul>
+    <li><strong>Reading a job posting:</strong> the visible text of that page.</li>
+    <li><strong>ATS score, tailoring, cover letter:</strong> the job description and your resume text.</li>
+    <li><strong>Filling a form:</strong> a summary of the form on that page — field labels, options, what is already entered (password and card fields are masked) — plus your profile, resume text and matching saved answers, which the backend reads from your account.</li>
+    <li><strong>A change you type in the chat panel:</strong> your message and the form summary.</li>
+  </ul>
+  <p>See <a href="https://www.anthropic.com/privacy">Anthropic's privacy policy</a> for how API data is handled. Nothing is sent to the AI model in the background: only when you start a step in the extension.</p>
+
+  <h2>Other services</h2>
+  <ul>
+    <li><strong>Supabase</strong> hosts the database, file storage, sign-in and backend functions.</li>
+    <li><strong>Stripe</strong> processes payments; you pay on Stripe's own pages. See <a href="https://stripe.com/privacy">Stripe's privacy policy</a>.</li>
+    <li><strong>Google</strong> provides sign-in. We receive your email address and an account ID, nothing else.</li>
+    <li><strong>GitHub Pages</strong> serves this website.</li>
+  </ul>
+  <p>We do not sell data, show ads, or use tracking cookies. This website stores only your sign-in session in your browser.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li>Edit or delete your profile, resumes, saved answers and applications on this website at any time; export your applications as CSV or JSON.</li>
+    <li>Turn fill statistics on or off in Settings.</li>
+    <li>Clear the extension's local copy by removing the extension or clearing its storage in Chrome.</li>
+    <li>To delete your whole account, contact the developer through the project page. Stripe billing data is managed in the billing portal (Credits → Manage billing).</li>
+  </ul>
+
+  <h2>Security</h2>
+  <ul>
+    <li>All traffic uses HTTPS; backend requests require your signed-in session.</li>
+    <li>AI prompts are built on the server; the extension cannot send its own instructions to the model.</li>
+    <li>Credit balances and usage records are written only by the backend.</li>
+  </ul>
+
+  <h2>Changes</h2>
+  <p>We update this page when the product changes how it handles data. The date above shows the latest revision.</p>
+</main>
+</body>
+</html>

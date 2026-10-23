@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobPilot — Account</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="app.html">JobPilot</a>
+    <div class="who">
+      <span id="who-email"></span>
+      <button id="btn-signout" class="btn small">Sign out</button>
+    </div>
+  </header>
+
+  <div class="wrap app">
+    <nav class="tabs" aria-label="Sections">
+      <a href="#profile">Profile</a>
+      <a href="#resumes">Resumes</a>
+      <a href="#answers">Saved answers</a>
+      <a href="#applications">Applications</a>
+      <a href="#credits">Credits</a>
+      <a href="#settings">Settings</a>
+    </nav>
+    <main id="view" aria-live="polite"><p class="empty">Loading…</p></main>
+  </div>
+
+  <footer class="site"><a href="privacy.html">Privacy policy</a></footer>
+
+  <script src="js/vendor/supabase.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
